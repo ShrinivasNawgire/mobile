@@ -1,0 +1,39 @@
+<h2>Login Form</h2>
+
+<form action="" method="post" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="imgcontainer">
+        <img src="../../../assets/img_avatar.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="form-group">
+        <label for="uname"><b>User name</b></label>
+        <input type="text" placeholder="Enter username" name="uname" formControlName="username">
+        <div *ngIf="submitted && f.username.errors">
+            <div *ngIf="f.username.errors.required">
+                Name is required.
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" formControlName="password" required>
+
+        <div *ngIf="submitted && f.password.errors">
+            <div *ngIf="f.password.errors.required">
+                Password is required
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="signupbtn" (click)="signup()">SignUp</button>
+    </div>
+</form>
