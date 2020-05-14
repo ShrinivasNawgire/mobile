@@ -11,7 +11,8 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required],
       repassword: ['', Validators.required]
-    })
+    });
   }
 
   get f() { return this.signupForm.controls; }
